@@ -1,0 +1,19 @@
+name: Sync Vality workflows
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  sync-workflows:
+    name: yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - id: get-repo-list
+        run: |
+          echo "::set-output name=repo-list::$(gh repo list $OWNER --source --no-archived -L 1000 --json name -q '.[].name')
+        with:
+          OWNER: ${{ github.repository_owner }}
+      - run: |
+          echo ${{ steps.get-repo-list.outputs.repo-list }}
