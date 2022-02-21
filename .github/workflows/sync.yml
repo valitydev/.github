@@ -39,7 +39,7 @@ jobs:
               --source \
               --no-archived \
               -L $REPO_LIMIT \
-              - l ${{ matrix.language }} \
+              -l ${{ matrix.language }} \
               --json name,owner \
           -q '.[] | [.owner.login, .name] | join("/")')
           echo "REPOSITORIES<<EOF" >> $GITHUB_ENV
