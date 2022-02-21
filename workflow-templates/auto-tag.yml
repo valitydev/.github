@@ -3,7 +3,8 @@ name: Vality auto-tags
 on:
   push:
     branches:
-      - $default-branch
+      - master
+      - main
 
 jobs:
   lint:
