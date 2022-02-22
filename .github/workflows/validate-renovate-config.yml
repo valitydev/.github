@@ -1,0 +1,16 @@
+name: Validate renovate config
+
+on:
+  pull_request:
+
+jobs:
+  validate-renovate-config:
+    name: Validate renovate config
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Checkout source code
+        uses: actions/checkout@v2
+      - name: 🚀 Validate renovate config
+        uses: rinchsan/renovate-config-validator@v0.0.10
+        with:
+          pattern: "*.json"
