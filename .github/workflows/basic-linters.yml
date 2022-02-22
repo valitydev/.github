@@ -11,5 +11,17 @@ on:
       - main
 
 jobs:
-  lint:
-    uses: valitydev/base-workflows/.github/workflows/basic-linters.yml@v1
+  yamllint:
+    name: yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v2
+
+      - name: 🚀 Run yamllint
+        uses: reviewdog/action-yamllint@v1
+        with:
+          filter_mode: nofilter
+          yamllint_flags: >-
+            . --no-warnings -d "{extends: default, rules: {line-length: {max:
+            120}}}"
