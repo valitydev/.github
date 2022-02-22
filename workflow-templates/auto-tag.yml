@@ -7,5 +7,5 @@ on:
       - main
 
 jobs:
-  lint:
+  tag-action:
     uses: valitydev/base-workflows/.github/workflows/auto-tag.yaml@v1
