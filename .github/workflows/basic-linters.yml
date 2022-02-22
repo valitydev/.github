@@ -22,6 +22,7 @@ jobs:
         uses: reviewdog/action-yamllint@v1
         with:
           filter_mode: nofilter
-          yamllint_flags: >
-            -d "{extends: default, rules: {line-length: {max: 120}}}"
+          fail_on_error: true
+          yamllint_flags: >-
+            -d '{extends: default, rules: {line-length: {max: 120}}}'
              . --no-warnings
