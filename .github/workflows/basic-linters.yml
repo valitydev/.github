@@ -23,5 +23,5 @@ jobs:
         with:
           filter_mode: nofilter
           yamllint_flags: >-
-            . --no-warnings -d "{extends: default, rules: {line-length: {max:
-            120}}}"
+            -d "{extends: default, rules: {line-length: {max: 120}}}"
+             . --no-warnings
