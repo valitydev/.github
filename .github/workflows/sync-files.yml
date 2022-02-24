@@ -1,15 +1,16 @@
-name: Sync Files
+name: Sync files
 on:
-  pull_request:
-  # push:
-  #   branches:
-  #     - master
+  push:
+    branches:
+      - master
+      - main
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code
         uses: actions/checkout@v2
+
       - name: 🔄 Sync repo files
         uses: valitydev/repo-file-sync-action@v1
         with:
