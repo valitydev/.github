@@ -68,6 +68,7 @@ jobs:
         with:
           base: master
           branch: updates/${{ matrix.group }}
+          title: "Update repo list for ${{ matrix.group }} group"
           commit-message: "Update repo list for ${{ matrix.group }} group"
           add-paths: |
             .github/sync.yml
