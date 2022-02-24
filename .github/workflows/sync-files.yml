@@ -15,4 +15,5 @@ jobs:
         uses: valitydev/repo-file-sync-action@v1
         with:
           GH_PAT: ${{ secrets.GH_PAT }}
+          GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
           BRANCH_PREFIX: update/
