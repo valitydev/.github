@@ -1,0 +1,9 @@
+group:
+  - id: default
+    files:
+      - source: workflow-templates/basic-linters.yml
+        dest: .github/workflows/basic-linters.yml
+      - source: LICENSE
+        dest: LICENSE
+    repos: |
+      valitydev/test
