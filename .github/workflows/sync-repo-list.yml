@@ -40,7 +40,7 @@ jobs:
               -L $repo_limit \
               $LANGUAGE_ARGS \
               --json name,owner \
-              -q '.[] | [.owner.login, .name] | join("/")')
+              -q '.|=sort_by(.name)| .[] | [.owner.login, .name] | join("/")')
           REPOSITORIES="${REPOSITORIES//'%'/'%25'}"
           REPOSITORIES="${REPOSITORIES//$'\n'/'%0A'}"
           REPOSITORIES="${REPOSITORIES//$'\r'/'%0D'}"
