@@ -47,7 +47,7 @@ jobs:
       - name: 🔄 Update sync.yml file for ${{ matrix.group }} group
         uses: fjogeleit/yaml-update-action@master
         with:
-          valueFile: ".github/sync.yml"
+          valueFile: "sync.yml"
           propertyPath: >-
             $.group[?(@.id == "${{ matrix.group }}")].repos
           value: ${{ steps.repo-list.outputs.repositories }}
