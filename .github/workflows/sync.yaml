@@ -1,0 +1,16 @@
+name: Sync Files
+on:
+  pull_request:
+  # push:
+  #   branches:
+  #     - master
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Run GitHub File Sync
+        uses: Redocly/repo-file-sync-action@master
+        with:
+          GH_PAT: ${{ secrets.GH_PAT }}
