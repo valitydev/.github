@@ -1,26 +1,25 @@
 name: Sync repo list in sync.yml file
 
 on:
-  pull_request:
-  # push:
-  #   branches:
-  #     - master
-  #     - main
-  # schedule:
-  #   - cron: 0 8 * * *
+  push:
+    branches:
+      - master
+      - main
+  schedule:
+    - cron: 0 * * * *
 
 env:
   repo_limit: 1000
 
 jobs:
   workflows-sync:
-    name: Sync repositories in ${{ matrix.group }} group
+    name: Sync repositories for ${{ matrix.group }} group
     runs-on: ubuntu-latest
     strategy:
       matrix:
         include:
           - group: default
-          - group: thrift
+          # - group: thrift
     steps:
       - name: ⤵️ Check out code
         uses: actions/checkout@v2

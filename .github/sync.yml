@@ -7,6 +7,3 @@ group:
         dest: LICENSE
     repos: |
       valitydev/test
-  - id: thrift
-    files:
-    repos:
