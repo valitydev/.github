@@ -6,7 +6,9 @@ group:
       - source: LICENSE
         dest: LICENSE
     repos: |-
+      valitydev/action-download-file
       valitydev/.github
+      valitydev/configurations
       valitydev/fraudbusters-notificator
       valitydev/error-mapping-java
       valitydev/db-common-lib
@@ -71,8 +73,6 @@ group:
       valitydev/bender-proto
       valitydev/iosetopts
       valitydev/token-keeper-client
-      valitydev/configurations
-      valitydev/action-download-file
       valitydev/damsel
       valitydev/tds-proto
       valitydev/msgpack-proto
