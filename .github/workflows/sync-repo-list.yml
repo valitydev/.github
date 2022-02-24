@@ -53,4 +53,4 @@ jobs:
           value: ${{ steps.repo-list.outputs.repositories }}
           branch: update/${{ matrix.group }}
           targetBranch: master
-          message: "Update repo list in ${{ steps.image.outputs.version }} group"
+          message: "Update repo list in ${{ matrix.group }} group"
