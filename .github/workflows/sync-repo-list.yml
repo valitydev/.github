@@ -58,7 +58,6 @@ jobs:
           value: ${{ steps.repo-list.outputs.repositories }}
           branch: update/${{ matrix.group }}
           labels: repo-updates
-          title: "{{message}}"
+          title: "Update repo list for ${{ matrix.group }} group"
           targetBranch: master
-          message: "Update repo list for ${{ matrix.group }} group"
           createPR: true
