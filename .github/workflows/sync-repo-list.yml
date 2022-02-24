@@ -39,7 +39,7 @@ jobs:
               -L $repo_limit \
               $LANGUAGE_ARGS \
               --json name,owner \
-              -q '.[] | [.owner.login, .name] | join("/")')
+              -q '.|=sort_by(.name)| .[] | [.owner.login, .name] | join("/")')
           REPOSITORIES="${REPOSITORIES//'%'/'%25'}"
           REPOSITORIES="${REPOSITORIES//$'\n'/'%0A'}"
           REPOSITORIES="${REPOSITORIES//$'\r'/'%0D'}"
@@ -55,8 +55,15 @@ jobs:
           propertyPath: >-
             $.group[?(@.id == "${{ matrix.group }}")].repos
           value: ${{ steps.repo-list.outputs.repositories }}
-          branch: update/${{ matrix.group }}
-          labels: repo-updates
-          message: "Update repo list for ${{ matrix.group }} group"
-          targetBranch: master
-          createPR: true
+          updateFile: true
+          commitChange: false
+
+      - name: 📤 Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          base: master
+          branch: updates/${{ matrix.group }}
+          title: "Update repo list for ${{ matrix.group }} group"
+          commit-message: "Update repo list for ${{ matrix.group }} group"
+          add-paths: |
+            .github/sync.yml
