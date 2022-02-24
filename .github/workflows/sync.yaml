@@ -15,3 +15,5 @@ jobs:
         with:
           GH_PAT: ${{ secrets.GH_PAT }}
           BRANCH_PREFIX: update/
+          GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
+          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
