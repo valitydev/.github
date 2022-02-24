@@ -17,9 +17,6 @@ repository:
   # Either `true` to enable downloads for this repository, `false` to disable them.
   has_downloads: true
 
-  # Updates the default branch for this repository.
-  default_branch: master
-
   # Either `true` to allow merging pull requests with a merge commit, or `false`
   # to prevent merging pull requests with merge commits.
   allow_merge_commit: false
@@ -79,7 +76,7 @@ branches:
       # Required. Enforce all configured restrictions for administrators. Set
       # to true to enforce required status checks for repository
       # administrators. Set to null to disable.
-      enforce_admins: true
+      enforce_admins: false
 
       # Requires all conversations on code to be resolved before a pull request
       # can be merged into a branch that matches this rule. Set to false to
