@@ -58,3 +58,4 @@ jobs:
           branch: update/${{ matrix.group }}
           targetBranch: master
           message: "Update repo list in ${{ matrix.group }} group"
+          createPR: true
