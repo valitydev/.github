@@ -1,7 +1,6 @@
 name: Sync repo list in sync.yml file
 
 on:
-  pull_request:
   push:
     branches:
       - master
@@ -58,10 +57,6 @@ jobs:
           value: ${{ steps.repo-list.outputs.repositories }}
           updateFile: true
           commitChange: false
-          # branch: update/${{ matrix.group }}
-          # labels: repo-updates
-          # message: "Update repo list for ${{ matrix.group }} group"
-          # targetBranch: master
 
       - name: 📤 Create Pull Request
         uses: peter-evans/create-pull-request@v3
