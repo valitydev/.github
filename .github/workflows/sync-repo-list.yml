@@ -21,6 +21,9 @@ jobs:
         include:
           - group: default
     steps:
+      - name: ⤵️ Check out code
+        uses: actions/checkout@v2
+
       - name: 📤 Get a list of repositories for ${{ matrix.group }} group
         id: repo-list
         run: |
@@ -44,10 +47,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
+
       - name: 🔄 Update sync.yml file for ${{ matrix.group }} group
         uses: fjogeleit/yaml-update-action@master
         with:
-          valueFile: "sync.yml"
+          valueFile: ".github/sync.yml"
           propertyPath: >-
             $.group[?(@.id == "${{ matrix.group }}")].repos
           value: ${{ steps.repo-list.outputs.repositories }}
