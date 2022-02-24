@@ -20,6 +20,7 @@ jobs:
       matrix:
         include:
           - group: default
+          - group: thrift
     steps:
       - name: ⤵️ Check out code
         uses: actions/checkout@v2
@@ -39,7 +40,7 @@ jobs:
               -L $repo_limit \
               $LANGUAGE_ARGS \
               --json name,owner \
-          -q '.[] | [.owner.login, .name] | join("/")')
+              -q '.[] | [.owner.login, .name] | join("/")')
           REPOSITORIES="${REPOSITORIES//'%'/'%25'}"
           REPOSITORIES="${REPOSITORIES//$'\n'/'%0A'}"
           REPOSITORIES="${REPOSITORIES//$'\r'/'%0D'}"
@@ -56,6 +57,8 @@ jobs:
             $.group[?(@.id == "${{ matrix.group }}")].repos
           value: ${{ steps.repo-list.outputs.repositories }}
           branch: update/${{ matrix.group }}
+          labels: repo-updates
+          title: "{{message}}"
           targetBranch: master
-          message: "Update repo list in ${{ matrix.group }} group"
+          message: "Update repo list for ${{ matrix.group }} group"
           createPR: true
