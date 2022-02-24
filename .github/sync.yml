@@ -7,3 +7,45 @@ group:
         dest: LICENSE
     repos: |
       valitydev/test
+  - id: thrift
+    files: null
+    repos: |-
+      valitydev/bouncer-proto
+      valitydev/magista-proto
+      valitydev/dominant-cache-proto
+      valitydev/fraudbusters-warehouse-proto
+      valitydev/schedulator-proto
+      valitydev/three-ds-server-storage-proto
+      valitydev/trusted-tokens-proto
+      valitydev/analytics-proto
+      valitydev/binbase-proto
+      valitydev/cashreg-proto
+      valitydev/payout-manager-proto
+      valitydev/pstds-proto
+      valitydev/fistful-reporter-proto
+      valitydev/pathfinder_proto
+      valitydev/messages-proto
+      valitydev/xrates-proto
+      valitydev/webhook-dispatcher-proto
+      valitydev/fault-detector-proto
+      valitydev/identdocstore-proto
+      valitydev/bender-proto
+      valitydev/damsel
+      valitydev/account-balance-proto
+      valitydev/questionary-aggr-proto
+      valitydev/wb-list-proto
+      valitydev/identification-proto
+      valitydev/limiter-proto
+      valitydev/machinegun-proto
+      valitydev/token-keeper-proto
+      valitydev/deanonimus-proto
+      valitydev/reporter-proto
+      valitydev/fraudbusters-proto
+      valitydev/shumaich-proto
+      valitydev/fraudbusters-notificator-proto
+      valitydev/ank-proto
+      valitydev/notification-proto
+      valitydev/midgard-proto
+      valitydev/file-storage-proto
+      valitydev/cds-proto
+      valitydev/fistful-proto
