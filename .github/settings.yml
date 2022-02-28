@@ -43,6 +43,8 @@ repository:
 teams:
   - name: devs
     permission: push
+  - name: bots
+    permission: push
 
 branches:
   - name: "master"
