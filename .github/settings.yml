@@ -45,6 +45,8 @@ teams:
     permission: push
   - name: bots
     permission: push
+  - name: maintainers
+    permission: push
 
 branches:
   - name: "master"
