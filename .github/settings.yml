@@ -99,10 +99,7 @@ branches:
       # Required. Restrict who can push to this branch. Team and user
       # restrictions are only available for organization-owned repositories.
       # Set to null to disable.
-      restrictions:
-        apps: []
-        users: []
-        teams: []
+      restrictions: null
 
       # Permits force pushes to the protected branch by anyone with write access
       # to the repository. Set to true to allow force pushes. Set to false or
