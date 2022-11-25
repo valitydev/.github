@@ -68,7 +68,7 @@ branches:
         # repositories. Omit this parameter for personal repositories.
         dismissal_restrictions:
           users:
-            - "app/10562"
+            - "mergify[bot]"
 
       # Required. Require status checks to pass before merging. Set to null to
       # disable
