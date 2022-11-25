@@ -67,8 +67,8 @@ branches:
         # dismissal_restrictions are only available for organization-owned
         # repositories. Omit this parameter for personal repositories.
         dismissal_restrictions:
-          users:
-            - "mergify[bot]"
+          apps:
+            - "mergify"
 
       # Required. Require status checks to pass before merging. Set to null to
       # disable
