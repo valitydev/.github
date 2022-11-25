@@ -68,7 +68,7 @@ branches:
         # repositories. Omit this parameter for personal repositories.
         dismissal_restrictions:
           users:
-            - "31353043"
+            - "app/10562"
 
       # Required. Require status checks to pass before merging. Set to null to
       # disable
