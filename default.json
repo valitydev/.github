@@ -1,6 +1,7 @@
 {
   "extends": ["config:base"],
   "dependencyDashboard": false,
+  "bumpVersion": "patch",
   "packageRules": [
     {
       "matchDatasources": ["maven"],
@@ -8,8 +9,8 @@
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all non-major maven dependencies",
       "groupSlug": "all-maven-minor-patch",
-      "automerge": true,
-      "bumpVersion": "patch"
+      "bumpVersion": "patch",
+      "automerge": true
     },
     {
       "matchDatasources": ["maven"],
