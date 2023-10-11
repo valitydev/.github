@@ -68,7 +68,7 @@ branches:
         # repositories. Omit this parameter for personal repositories.
         dismissal_restrictions:
           apps:
-            - "mergify"
+            - "renovate"
 
       # Required. Require status checks to pass before merging. Set to null to
       # disable
