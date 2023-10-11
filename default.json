@@ -1,14 +1,22 @@
 {
   "extends": ["config:base"],
   "dependencyDashboard": false,
-  "platformAutomerge": true,
-  "bumpVersion": "patch",
   "packageRules": [
     {
-      "matchPackagePatterns": ["*"],
+      "matchDatasources": ["maven"],
+      "excludePackagePrefixes": ["dev.vality"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch",
+      "groupName": "all non-major maven dependencies",
+      "groupSlug": "all-maven-minor-patch",
+      "automerge": true,
+      "bumpVersion": "patch"
+    },
+    {
+      "matchDatasources": ["maven"],
+      "matchDepTypes": ["test"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "groupName": "all maven test dependencies",
+      "groupSlug": "all-maven-test-deps",
       "automerge": true
     }
   ]
